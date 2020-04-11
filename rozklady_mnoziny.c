@@ -36,11 +36,11 @@ char vsetky_podmnoziny(unsigned int poc)
     char bits[poc];
     j = pow(2,poc-1);
     unsigned int mnoz[poc];
-    for(int i = 0; i < poc; i++)mnoz[i] = rand_cisla(0,9);
 
-
-    for(int i = 0; i < poc; i++)bits[i] = '0';
-
+    for(int i = 0; i < poc; i++){
+        bits[i] = '0';
+        mnoz[i] = i;
+    }
     for(int i = 0; i < j; i++)
     {
         print(bits,mnoz,poc);
@@ -65,8 +65,11 @@ char vsetky_podmnoziny(unsigned int poc)
 
 int main()
 {
+    int poc;
+    printf("Zadaj pocet prvkov n z mnoziny Z{n}\n");
+    scanf("%d",&poc);
 
     
-    vsetky_podmnoziny(5);
+    vsetky_podmnoziny(poc);
 
 }
